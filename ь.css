@@ -1,0 +1,86 @@
+* {
+box-sizing: border-box;
+}
+/*.container{*/
+/*    display: flex;*/
+/*    height: 100vh;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+form {
+    max-width: 40em;
+    margin: 2em auto;
+    border-right: 0.07em solid #eee;
+    box-shadow: #a5a5a5 0 0 77px;
+    border-radius: 1em;
+    padding: 0 0.5em;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    border: solid 1px;
+    color: #33423a;
+}
+
+label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: solid 0.07em transparent;
+    width: 100%;
+    height: 2.5em;
+    border-radius: 1em;
+    text-decoration: #485d51;
+    font-weight: 700;
+
+}
+
+
+
+img{
+    width: 50%;
+}
+
+.mem {
+    height: 0;
+    overflow: hidden;
+    padding: 0 0.7em;
+    opacity: 0;
+    text-align: center;
+    transition: 0.55s opacity, 0.55s visibility;
+}
+
+input:checked ~ .mem {
+    height: 100%;
+    opacity: 1;
+}
+
+
+input[type="radio"]:checked + .title {
+    background-color: #6e8c82;
+    border: solid 0.07em #485d51;
+}
+
+@media (min-width: 550px) {
+    input:hover ~ .mem {
+        height: 100%;
+        opacity: 1;
+        transition: 1.5s opacity, 1s visibility;
+    }
+
+    .mem:hover{
+        background-color: aliceblue;
+    }
+
+    label:hover {
+        background: #aad2bb;
+        border: solid 0.07em #6e8c82;
+        transition: 1.5s opacity, 1s visibility;
+    }
+}
